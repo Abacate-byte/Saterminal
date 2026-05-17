@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SATERMINAL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="flicker"></div>
+
+  <div id="boot-screen">
+    <div id="bios-wrap">
+      <div id="bios-header">
+        <span id="bios-brand">SATURN SYSTEMS CORP.</span>
+        <span id="bios-ver">NEBULA-BIOS v6.1.42 (C) 1987-2024</span>
+      </div>
+      <div id="bios-body">
+        <div class="bios-line dim">CPU: NebulaSilicon NX-9 @ 4200MHz</div>
+        <div class="bios-line dim">MEMORY TEST: <span class="hi">8192MB OK</span></div>
+        <div class="bios-line dim">STORAGE CONTROLLER: <span class="hi">DETECTED</span></div>
+        <div class="bios-line dim">──────────────────────────────────────────────────</div>
+        <div class="bios-line" id="bios-title-line">
+          <span class="bios-big">SATERMINAL</span>
+        </div>
+        <div class="bios-line dim">──────────────────────────────────────────────────</div>
+        <div class="bios-line spacer"></div>
+        <div class="bios-line">STARTUP CONFIGURATION</div>
+        <div class="bios-line spacer"></div>
+
+        <div class="bios-line">
+          <label class="bios-field-label">USERNAME:</label>
+          <input type="text" id="input-username"
+            autocomplete="off" autocorrect="off"
+            autocapitalize="off" spellcheck="false"
+            maxlength="24" placeholder="type your username" />
+        </div>
+
+        <div class="bios-line spacer"></div>
+
+        <div class="bios-line opt-row">
+          <label class="bios-label" id="label-storage">
+            <input type="checkbox" id="chk-storage" />
+            <span class="bios-box"></span>
+            <span class="bios-opt-text">[1] Allow Storage Access</span>
+            <span class="bios-tag req">REQUIRED</span>
+          </label>
+        </div>
+        <div class="bios-line opt-row">
+          <label class="bios-label" id="label-root">
+            <input type="checkbox" id="chk-root" />
+            <span class="bios-box"></span>
+            <span class="bios-opt-text">[2] Request Root Privileges</span>
+            <span class="bios-tag opt">OPTIONAL</span>
+          </label>
+        </div>
+        <div class="bios-line spacer"></div>
+        <div class="bios-line spacer"></div>
+        <button id="boot-btn">[ BOOT SYSTEM ]<span id="btn-cursor">_</span></button>
+        <div class="bios-line spacer"></div>
+        <div class="bios-line dim">USE MOUSE OR KEYBOARD TO SELECT OPTIONS</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="terminal-wrap">
+    <div id="output"></div>
+    <div id="input-row">
+      <span id="prompt-symbol"></span>
+      <input type="text" id="cmd-input"
+        autocomplete="off" autocorrect="off"
+        autocapitalize="off" spellcheck="false" autofocus />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+      
